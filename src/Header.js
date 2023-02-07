@@ -1,7 +1,6 @@
 // import styled library to style components
 import { useState } from 'react';
 import styled from 'styled-components';
-import logo from '../';
 
 /* 
 component structure/logic
