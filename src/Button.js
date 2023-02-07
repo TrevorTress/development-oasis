@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-	width: 60px;
-	height: 60px;
+	width: fit-content;
+	height: 10vh;
 	margin: 10px;
 	background-color: lightgrey;
 	border-radius: 1em;
