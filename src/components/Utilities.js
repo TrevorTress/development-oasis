@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import BSModal from 'react-bootstrap/Modal';
 import BSTooltip from 'react-bootstrap/Tooltip';
+import BSBreadcrumb from 'react-bootstrap/Breadcrumb';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import { FaHome } from 'react-icons/fa';
 
 ///////////////////////////////////////////////
 const Button = styled.button`
@@ -16,6 +18,54 @@ const Button = styled.button`
 	}
 `;
 ///////////////////////////////////////////////
+const BreadcrumbComp = ({ className, items }) => {
+	switch (items.length) {
+		case 1:
+			return (
+				<BSBreadcrumb className={className}>
+					<BSBreadcrumb.Item href="/">
+						<FaHome size={20} />
+					</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item active>{items[0]}</BSBreadcrumb.Item>
+				</BSBreadcrumb>
+			);
+		case 2:
+			return (
+				<BSBreadcrumb className={className}>
+					<BSBreadcrumb.Item href="/">
+						<FaHome size={20} />
+					</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item href="../">{items[0]}</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item active>{items[1]}</BSBreadcrumb.Item>
+				</BSBreadcrumb>
+			);
+		case 3:
+			return (
+				<BSBreadcrumb className={className}>
+					<BSBreadcrumb.Item href="/">
+						<FaHome size={20} />
+					</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item href="../../">{items[0]}</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item href="../">{items[1]}</BSBreadcrumb.Item>
+					<BSBreadcrumb.Item active>{items[2]}</BSBreadcrumb.Item>
+				</BSBreadcrumb>
+			);
+		default:
+			return (
+				<BSBreadcrumb className={className}>
+					<BSBreadcrumb.Item href="/">
+						<FaHome size={20} />
+					</BSBreadcrumb.Item>
+				</BSBreadcrumb>
+			);
+	}
+};
+
+const Breadcrumb = styled(BreadcrumbComp)`
+	background: yellow;
+	color: antiquewhite;
+`;
+///////////////////////////////////////////////
 const Tooltip = styled(OverlayTrigger)``;
 
 // render function (placed in parent element):
@@ -24,7 +74,7 @@ const Tooltip = styled(OverlayTrigger)``;
 const ModalComp = ({ className, title, description, showHandler, hideHandler }) => {
 	return (
 		// show and hide functions are passed to parent element as props
-		<BSModal show={showHandler} onHide={hideHandler} dialogClassName="course-modal" centered>
+		<BSModal className={className} show={showHandler} onHide={hideHandler} centered>
 			<BSModal.Header closeButton>
 				<BSModal.Title>{title}</BSModal.Title>
 			</BSModal.Header>
@@ -65,4 +115,4 @@ const handleShowModal = (title, description, image) => {
 */
 ///////////////////////////////////////////////
 
-export { Button, Tooltip, Modal };
+export { Button, Breadcrumb, Tooltip, Modal };

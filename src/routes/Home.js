@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Container, Content, Header, Footer, Navbar } from '../components/PageStructure';
-import { Button, Modal, Tooltip } from '../components/Utilities';
+import { Button, Breadcrumb, Modal, Tooltip } from '../components/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BSTooltip from 'react-bootstrap/Tooltip';
-// import Navbar from '../PageStructure/Navbar';
 
 const Home = () => {
 	// code that should only run on page load
@@ -38,6 +37,7 @@ const Home = () => {
 				<Header title="testing" />
 				<Navbar />
 				<Content>
+					<Breadcrumb items={['one', 'two', 'three']} />
 					<Button onClick={handleShowModal}>Modal Button</Button>
 
 					<Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>

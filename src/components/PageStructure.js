@@ -126,9 +126,6 @@ const NavbarComp = ({ className, title }) => {
 			<button class="nav-button">x</button>
 			<button class="nav-button">x</button>
 			<button class="nav-button">x</button>
-			<button class="nav-button">x</button>
-			<button class="nav-button">x</button>
-			<button class="nav-button">x</button>
 		</div>
 	);
 };
@@ -150,7 +147,7 @@ const Navbar = styled(NavbarComp)`
 		display: block;
 		margin: 0 auto;
 		width: 90%;
-		height: 8%;
+		height: 13%;
 		border-radius: 0.5rem;
 
 		&:hover {
