@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import Header from '../Header';
-import Button from '../Button';
-import Footer from '../Footer';
-import Modal from '../Modal';
-import Tooltip from '../Tooltip';
+import { Container, Content, Header, Footer, Navbar } from '../components/PageStructure';
+import { Button, Modal, Tooltip } from '../components/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BSTooltip from 'react-bootstrap/Tooltip';
+// import Navbar from '../PageStructure/Navbar';
 
 const Home = () => {
 	// code that should only run on page load
@@ -16,44 +14,44 @@ const Home = () => {
 	// tooltip render function
 	const renderTooltip = (content) => <BSTooltip id="button-tooltip">{content}</BSTooltip>;
 
-	// modal state (place into parent component)
+	// modal state (placed into parent component)
 	const [modal, setModal] = useState({
-		title: '',
-		description: '',
+		title: 'This is a title!',
+		description: 'This is a description!',
 	});
 
-	// modal handlers (place into parent component)
+	// modal handlers (placed into parent component)
 	const [showModal, setShowModal] = useState(false);
-	const handleShowModal = () => {
-		setShowModal(true);
-	};
+	const handleShowModal = () => setShowModal(true);
+	const hideModal = () => setShowModal(false);
 
 	//conditional state
 	const [conditional, setConditional] = useState(true);
-
 	const myRef = useRef(0);
-
 	const increment = () => {
 		myRef.current += 1;
 	};
+
 	return (
 		<>
-			<Header title="testing" />
-			<Button onClick={handleShowModal}>Modal Button</Button>
+			<Container>
+				<Header title="testing" />
+				<Navbar />
+				<Content>
+					<Button onClick={handleShowModal}>Modal Button</Button>
 
-			<Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>
-				<Button>Tooltip Button</Button>
-			</Tooltip>
+					<Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>
+						<Button>Tooltip Button</Button>
+					</Tooltip>
 
-			<Button onClick={() => setConditional(!conditional)}>{conditional ? <span style={{ background: 'green' }}>Conditional Button True</span> : <span style={{ background: 'red' }}>Conditional Button False</span>}</Button>
+					<Button onClick={() => setConditional(!conditional)}>{conditional ? <span style={{ background: 'green' }}>Conditional Button True</span> : <span style={{ background: 'red' }}>Conditional Button False</span>}</Button>
 
-			<Button onClick={increment}>
-				<p>Reference Counter: {myRef.current}</p>
-				<p>(Doesnt cause re-render)</p>
-			</Button>
+					<Button onClick={increment}>Reference Counter: {myRef.current}</Button>
+				</Content>
+				<Footer />
 
-			<Footer />
-			<Modal title="This is a modal!" showHandler={showModal} hideHandler={() => setShowModal(false)} />
+				<Modal title={modal.title} description={modal.description} showHandler={showModal} hideHandler={hideModal} />
+			</Container>
 		</>
 	);
 };
