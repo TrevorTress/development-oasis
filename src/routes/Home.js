@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Container, Content, Header, Footer, Navbar } from '../components/PageStructure';
-import { Button, Breadcrumb, Modal, Tooltip } from '../components/Utilities';
+import { Button, Breadcrumb, Carousel, Image, Modal, Tooltip, Table } from '../components/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 import BSTooltip from 'react-bootstrap/Tooltip';
+import 'tablesorter';
+import 'tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js';
+import 'tablesorter/dist/css/theme.ice.min.css';
+import GlobalStyles from '../GlobalStyles';
 
 const Home = () => {
 	// code that should only run on page load
-	// useEffect(() => {
-	// 	console.log('Hello Trevor');
-	// }, []);
 
 	// tooltip render function
 	const renderTooltip = (content) => <BSTooltip id="button-tooltip">{content}</BSTooltip>;
@@ -33,20 +35,25 @@ const Home = () => {
 
 	return (
 		<>
+			<GlobalStyles />
 			<Container>
 				<Header title="testing" />
 				<Navbar />
 				<Content>
 					<Breadcrumb items={['one', 'two', 'three']} />
-					<Button onClick={handleShowModal}>Modal Button</Button>
+					{/* <Image src="https://i.imgur.com/gYeS2WZ.jpeg" alt="test" /> */}
+					<Carousel />
+					{/* <Button onClick={handleShowModal}>Modal Button</Button> */}
 
-					<Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>
+					{/* <Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>
 						<Button>Tooltip Button</Button>
-					</Tooltip>
+					</Tooltip> */}
 
-					<Button onClick={() => setConditional(!conditional)}>{conditional ? <span style={{ background: 'green' }}>Conditional Button True</span> : <span style={{ background: 'red' }}>Conditional Button False</span>}</Button>
+					{/* <Button onClick={() => setConditional(!conditional)}>{conditional ? <span style={{ background: 'green' }}>Conditional Button True</span> : <span style={{ background: 'red' }}>Conditional Button False</span>}</Button> */}
 
-					<Button onClick={increment}>Reference Counter: {myRef.current}</Button>
+					{/* <Button onClick={increment}>Reference Counter: {myRef.current}</Button> */}
+
+					<Table tablesorter={true} />
 				</Content>
 				<Footer />
 
