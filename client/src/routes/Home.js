@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { Container, Content, Header, Footer, Navbar } from '../components/PageStructure';
+import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Header, Navbar, Content, Footer } from '../components/StructureIndex';
 import { Button, Breadcrumb, Carousel, Image, Modal, Tooltip, Table } from '../components/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
@@ -41,8 +42,9 @@ const Home = () => {
 				<Navbar />
 				<Content>
 					<Breadcrumb items={['one', 'two', 'three']} />
+
 					{/* <Image src="https://i.imgur.com/gYeS2WZ.jpeg" alt="test" /> */}
-					<Carousel />
+					{/* <Carousel /> */}
 					{/* <Button onClick={handleShowModal}>Modal Button</Button> */}
 
 					{/* <Tooltip placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('This is a tooltip!')}>
@@ -53,7 +55,7 @@ const Home = () => {
 
 					{/* <Button onClick={increment}>Reference Counter: {myRef.current}</Button> */}
 
-					<Table tablesorter={true} />
+					{/* <Table tablesorter={true} /> */}
 				</Content>
 				<Footer />
 

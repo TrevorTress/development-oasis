@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logo from '../assets/its-logo.png';
+import { BsFillTelephoneFill } from 'react-icons/bs';
 
 // JSX template
 /*
@@ -7,6 +8,7 @@ import logo from '../assets/its-logo.png';
 	<Header title="testing" />
 	<Navbar />
 	<Content>
+	
 	</Content>
 	<Footer />
 </Container>
@@ -79,7 +81,9 @@ const FooterComp = ({ className }) => {
 			</div>
 			<div class="footer-right">
 				<button>Call Us</button>
-				<button>Call Us</button>
+				<button>
+					<BsFillTelephoneFill size={20} />
+				</button>
 			</div>
 		</footer>
 	);
@@ -103,7 +107,17 @@ const Footer = styled(FooterComp)`
 
 	.footer-right {
 		display: flex;
-		margin: 0 1rem;
+		margin: 0 0.5rem;
+
+		& button {
+			margin: auto 0.4vw;
+			height: 90%;
+			width: 3.5vw;
+			&:hover {
+				transform: scale(1.05);
+				filter: opacity(0.8);
+			}
+		}
 	}
 
 	.footer-logo {
