@@ -1,14 +1,14 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Header, Navbar, Content, Footer } from '../components/StructureIndex';
-import { Button, Breadcrumb, Carousel, Image, Modal, Tooltip, Table } from '../components/Utilities';
+import { Container, Header, Navbar, Content, Footer } from '../layout/index';
+import { Button, Breadcrumb, Carousel, Image, Modal, Tooltip, Table } from '../utilities/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import BSTooltip from 'react-bootstrap/Tooltip';
 import 'tablesorter';
 import 'tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js';
 import 'tablesorter/dist/css/theme.ice.min.css';
-import GlobalStyles from '../GlobalStyles';
+import GlobalStyles from '../styles/GlobalStyles';
 
 const Home = () => {
 	// code that should only run on page load

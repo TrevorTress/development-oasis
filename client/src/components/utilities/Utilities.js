@@ -6,7 +6,7 @@ import BSTooltip from 'react-bootstrap/Tooltip';
 import BSBreadcrumb from 'react-bootstrap/Breadcrumb';
 import BSCarousel from 'react-bootstrap/Carousel';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import photo from '../assets/landscape.webp';
+import photo from './assets/landscape.webp';
 import { FaHome, FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from 'react-icons/fa';
 
 ///////////////////////////////////////////////

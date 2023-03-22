@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logo from '../assets/its-logo.png';
+import logo from './assets/its-logo.png';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
 // footer content and logic
