@@ -1,16 +1,17 @@
-import Container from './Container';
-import Content from './-content-/Content';
-import Header from './-header-/Header';
-import Footer from './Footer';
-import Navbar from './Navbar';
+import Container from './content/Container';
+import Content from './content/Content';
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import Navbar from './navbar/Navbar';
 
 /*
-<Container>
 	<Header title="testing" />
 	<Navbar />
-	<Content>
-	</Content>
+	<Container>
+		<Content>
+		
+		</Content>
+	</Container>
 	<Footer />
-</Container>
 */
-export { Container, Header, Navbar, Content, Footer };
+export { Header, Navbar, Container, Content, Footer };

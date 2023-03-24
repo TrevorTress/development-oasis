@@ -1,17 +1,19 @@
 import styled from 'styled-components';
-import logo from './assets/its-logo.png';
+import logo from './its-logo.png';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
 // footer content and logic
 const FooterComp = ({ className }) => {
+	const link = 'https://www.interactivetrainingsystems.com';
 	return (
 		<footer className={className}>
 			<div class="footer-left">
 				<p class="powered-by">Powered By:</p>
-				<img class="footer-logo" src={logo} />
+				<a href={link}>
+					<img class="footer-logo" src={logo} alt="logo" />
+				</a>
 			</div>
 			<div class="footer-right">
-				<button>Call Us</button>
 				<button>
 					<BsFillTelephoneFill size={20} />
 				</button>
@@ -30,7 +32,8 @@ const Footer = styled(FooterComp)`
 	width: 100%; // width of entire page
 	height: var(--footer-height); // 7% of screen tall
 	min-height: 48px;
-	background: orange;
+	border-top: solid black;
+	background: var(--footer-background);
 
 	// left section
 	.footer-left {
@@ -41,11 +44,17 @@ const Footer = styled(FooterComp)`
 		.powered-by {
 			margin: auto 0;
 			padding: 5px;
+			font-weight: bold;
 		}
 
 		// lower-left logo
 		.footer-logo {
 			margin: 5px;
+			height: 100%;
+		}
+
+		& a {
+			height: 85%;
 		}
 	}
 

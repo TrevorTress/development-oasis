@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // component that holds main page content (to the right of the navbar)
-const Content = styled.div`
+const Container = styled.main`
 	position: relative;
 	height: calc(100vh - var(--header-height) - var(--footer-height)); // (page - header - footer)
 	width: calc(100vw - var(--navbar-width)); // (page - navbar)
@@ -9,8 +9,13 @@ const Content = styled.div`
 	left: var(--navbar-width); // shift past navbar
 	background: var(--content-background);
 	overflow: auto; // content scrolls inside of other static elements
+
+	@media screen and (max-width: 480px) {
+		left: 0;
+		width: 100%;
+	}
 `;
 
-export default Content;
+export default Container;
 
-// <Content></Content>
+// <Container></Container>

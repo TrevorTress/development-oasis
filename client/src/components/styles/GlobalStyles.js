@@ -3,16 +3,19 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 	// global vars
 	:root {
+		
+
 		--header-height: 8vh;
 		--footer-height: 7vh;
 		--breadcrumb-height: 4vh;
 		--navbar-width: 6vw;
 		
 
-		--header-background: white;
+		--header-background: lightgrey;
+		--footer-background: lightgrey;
 		--content-background: lightblue;
-		--navbar-background: lightgrey;
-		--breadcrumb-background: lavender;
+		--navbar-background: grey;
+		--breadcrumb-background: none;
 	}
 	
     // tablesorter pager button effect
