@@ -3,11 +3,10 @@ import $ from 'jquery';
 import styled from 'styled-components';
 import BSModal from 'react-bootstrap/Modal';
 import BSTooltip from 'react-bootstrap/Tooltip';
-import BSBreadcrumb from 'react-bootstrap/Breadcrumb';
 import BSCarousel from 'react-bootstrap/Carousel';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import photo from './assets/landscape.webp';
-import { FaHome, FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from 'react-icons/fa';
+import { FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from 'react-icons/fa';
 
 ///////////////////////////////////////////////
 const Button = styled.button`
@@ -22,53 +21,7 @@ const Button = styled.button`
 	}
 `;
 ///////////////////////////////////////////////
-const BreadcrumbComp = ({ className, items }) => {
-	switch (items.length) {
-		case 1:
-			return (
-				<BSBreadcrumb className={className}>
-					<BSBreadcrumb.Item href="/">
-						<FaHome size={20} />
-					</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item active>{items[0]}</BSBreadcrumb.Item>
-				</BSBreadcrumb>
-			);
-		case 2:
-			return (
-				<BSBreadcrumb className={className}>
-					<BSBreadcrumb.Item href="/">
-						<FaHome size={20} />
-					</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item href="../">{items[0]}</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item active>{items[1]}</BSBreadcrumb.Item>
-				</BSBreadcrumb>
-			);
-		case 3:
-			return (
-				<BSBreadcrumb className={className}>
-					<BSBreadcrumb.Item href="/">
-						<FaHome size={20} />
-					</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item href="../../">{items[0]}</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item href="../">{items[1]}</BSBreadcrumb.Item>
-					<BSBreadcrumb.Item active>{items[2]}</BSBreadcrumb.Item>
-				</BSBreadcrumb>
-			);
-		default:
-			return (
-				<BSBreadcrumb className={className}>
-					<BSBreadcrumb.Item href="/">
-						<FaHome size={20} />
-					</BSBreadcrumb.Item>
-				</BSBreadcrumb>
-			);
-	}
-};
 
-const Breadcrumb = styled(BreadcrumbComp)`
-	background: yellow;
-	color: antiquewhite;
-`;
 ///////////////////////////////////////////////
 const CarouselComp = ({ className }) => {
 	return (
@@ -517,4 +470,4 @@ useEffect(() => {
 });
 */
 
-export { Button, Breadcrumb, Carousel, Image, Tooltip, Modal, Table };
+export { Button, Carousel, Image, Tooltip, Modal, Table };

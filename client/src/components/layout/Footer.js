@@ -28,7 +28,7 @@ const Footer = styled(FooterComp)`
 	position: fixed; // stick in place
 	bottom: 0; // stick to bottom of page
 	width: 100%; // width of entire page
-	height: 7vh; // 7% of screen tall
+	height: var(--footer-height); // 7% of screen tall
 	min-height: 48px;
 	background: orange;
 

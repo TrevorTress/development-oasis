@@ -20,12 +20,12 @@ const Navbar = styled(NavbarComp)`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	top: 8vh;
+	top: var(--header-height);
 	left: 0;
-	width: 6.5vw;
+	height: calc(100vh - var(--header-height) - var(--footer-height));
+	width: var(--navbar-width);
 	min-width: fit-content;
-	background: blue;
-	height: 85vh;
+	background: var(--navbar-background);
 
 	.nav-button {
 		display: block;

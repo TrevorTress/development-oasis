@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Header, Navbar, Content, Footer } from '../layout/index';
-import { Button, Breadcrumb, Carousel, Image, Modal, Tooltip, Table } from '../utilities/Utilities';
+import { Button, Carousel, Image, Modal, Tooltip, Table } from '../utilities/Utilities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import BSTooltip from 'react-bootstrap/Tooltip';
@@ -9,6 +9,7 @@ import 'tablesorter';
 import 'tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js';
 import 'tablesorter/dist/css/theme.ice.min.css';
 import GlobalStyles from '../styles/GlobalStyles';
+import Breadcrumb from '../layout/-content-/Breadcrumb';
 
 const Home = () => {
 	// code that should only run on page load
@@ -37,12 +38,12 @@ const Home = () => {
 	return (
 		<>
 			<GlobalStyles />
+
 			<Container>
 				<Header title="testing" />
 				<Navbar />
 				<Content>
-					<Breadcrumb items={['one', 'two', 'three']} />
-
+					<Breadcrumb items={['one']} />
 					{/* <Image src="https://i.imgur.com/gYeS2WZ.jpeg" alt="test" /> */}
 					{/* <Carousel /> */}
 					{/* <Button onClick={handleShowModal}>Modal Button</Button> */}

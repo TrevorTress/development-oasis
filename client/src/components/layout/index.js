@@ -1,8 +1,8 @@
-import Container from './1-Container';
-import Content from './2-Content';
-import Header from './3-Header';
-import Footer from './4-Footer';
-import Navbar from './5-Navbar';
+import Container from './Container';
+import Content from './-content-/Content';
+import Header from './-header-/Header';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 /*
 <Container>
