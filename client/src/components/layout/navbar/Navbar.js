@@ -66,6 +66,7 @@ const Navbar = styled(NavbarComp)`
 		}
 	}
 
+	// hide navbar on mobile
 	@media screen and (max-width: 480px) {
 		display: none;
 	}

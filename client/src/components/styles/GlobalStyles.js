@@ -3,19 +3,28 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 	// global vars
 	:root {
-		
+		--container-background: lightblue;
 
 		--header-height: 8vh;
-		--footer-height: 7vh;
-		--breadcrumb-height: 4vh;
-		--navbar-width: 6vw;
-		
-
 		--header-background: lightgrey;
+
+		--footer-height: 7vh;
 		--footer-background: lightgrey;
-		--content-background: lightblue;
+
+		--navbar-width: 6vw;
 		--navbar-background: grey;
+		
+		--breadcrumb-height: 4vh;
 		--breadcrumb-background: none;
+				
+		--content-height: 76vh;
+		--content-width: 90vw;
+		--content-background: white;
+		
+		--tooltip-text-color: white;
+		--tooltip-background-color: black;
+		--tooltip-margin: 30px;
+		--tooltip-arrow-size: 6px;
 	}
 	
     // tablesorter pager button effect

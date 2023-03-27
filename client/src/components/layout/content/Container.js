@@ -7,11 +7,12 @@ const Container = styled.main`
 	width: calc(100vw - var(--navbar-width)); // (page - navbar)
 	top: var(--header-height); // shift past header
 	left: var(--navbar-width); // shift past navbar
-	background: var(--content-background);
 	overflow: auto; // content scrolls inside of other static elements
+	background: var(--container-background);
 
+	// mobile adjustments
 	@media screen and (max-width: 480px) {
-		left: 0;
+		left: 0; // nav disappears, container shifts back
 		width: 100%;
 	}
 `;

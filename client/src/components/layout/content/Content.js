@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 // component that holds main page content (to the right of the navbar)
 const Content = styled.section`
-	height: 76vh;
-	width: 90vw;
+	height: var(--content-height);
+	width: var(--content-width);
 	margin: 0 1.5vw;
-	background: white;
+	background: var(--content-background);
 	padding: 50px;
 	border-radius: 2rem;
 
