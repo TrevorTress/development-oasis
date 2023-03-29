@@ -1,17 +1,14 @@
 // dependencies
 import { useState, useEffect, useRef } from 'react';
+import GlobalStyles from './styles/GlobalStyles';
+import Router from './Router';
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
+
+// tablesorter / bootstrap imports
 import 'tablesorter';
 import 'tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js';
 import 'tablesorter/dist/css/theme.ice.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// components
-import { Container, Content, Header, Footer, Navbar, Breadcrumb, Search } from './layout/index';
-import { Carousel, Image, Modal, Tooltip, Table } from './utilities/index';
-import GlobalStyles from './styles/GlobalStyles';
-import Router from './Router';
 
 function App() {
 	useEffect(() => {
