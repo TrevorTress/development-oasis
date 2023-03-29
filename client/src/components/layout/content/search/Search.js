@@ -1,17 +1,48 @@
-import { useState, useNavigate } from 'react';
+import { useState, useEffect, useNavigate, useRef } from 'react';
 import Fuse from 'fuse.js';
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
-import data from './SearchData';
+import data from './search-data/safety/SafetyData';
 
+// function for our SearchBlur component (to hide results if you click away)
+function useSearchBlur(ref) {
+	useEffect(() => {
+		function handleOutsideClick(event) {
+			if (ref.current && !ref.current.contains(event.target)) {
+				document.getElementById('results').style.display = 'none';
+			}
+		}
+
+		document.addEventListener('mousedown', handleOutsideClick);
+		return () => {
+			document.removeEventListener('mousedown', handleOutsideClick);
+		};
+	}, [ref]);
+}
+// SearchBlur component
+const SearchBlur = (props) => {
+	const wrapperRef = useRef(null);
+	useSearchBlur(wrapperRef);
+
+	return <div ref={wrapperRef}>{props.children}</div>;
+};
+
+// prop specifications for SearchBlur
+SearchBlur.propTypes = {
+	children: PropTypes.element.isRequired,
+};
+
+// fuse config options
 const options = {
-	keys: ['section', 'keywords'],
-	minMatchCharLength: 3,
+	keys: ['tab', 'page'],
+	minMatchCharLength: 2,
 	threshold: 0.5,
 };
 
-const Search = ({ className, homeSearch }) => {
+// search bar component
+const Search = ({ className }) => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [results, setResults] = useState([]);
 
@@ -21,60 +52,46 @@ const Search = ({ className, homeSearch }) => {
 
 		const fuse = new Fuse(data, options);
 		const result = fuse.search(value);
-		console.log(result);
 		setResults(result);
+		document.getElementById('results').style.display = 'block';
 	};
 
 	return (
-		<div className={className} onMouseLeave={(e) => setResults([])}>
-			<div className="search-bar">
-				<FaSearch size={20} />
-				<input type="text" value={searchTerm} onChange={handleSearch} />
+		<SearchBlur>
+			<div className={className}>
+				<div className="search-bar">
+					<FaSearch size={20} />
+					<input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search for items here" />
+					{results.length > 0 && (
+						<ul id="results">
+							{results.map(({ item }) => {
+								return (
+									<li>
+										<a href={item.link} style={{ color: `${item.color}` }}>
+											{item.tab} ({item.section} &gt; {item.page})
+										</a>
+									</li>
+								);
+							})}
+						</ul>
+					)}
+				</div>
 			</div>
-
-			{results.length > 0 ? (
-				<ul>
-					{results.map(({ item }) => {
-						return (
-							<li key={item.section}>
-								<a href={item.link} style={{ color: `${item.color}` }}>
-									{item.section};
-									<b>
-										{item.keywords
-											.filter((word) => word.includes(searchTerm))
-											.map((val, ind, filter) => {
-												if (filter.length === 1) return ` (${val})`;
-												else if (ind === 0) return ` (${val},`;
-												else if (ind === filter.length - 1) return ` ${val})`;
-												else return ` ${val},`;
-											})}
-									</b>
-								</a>
-							</li>
-						);
-					})}
-				</ul>
-			) : (
-				<></>
-			)}
-		</div>
+		</SearchBlur>
 	);
 };
 
 const SearchBar = styled(Search)`
-	background: black;
-	position: absolute;
-	top: ${(props) => props.display};
 	z-index: 20;
-	width: 100%;
-	height: 8vh;
-	transition: top 0.3s ease-in-out;
+	height: 5.5vh;
+	margin: 0.7vh 2.5vw;
 
 	.search-bar {
 		display: flex;
-		justify-content: center;
+		justify-content: right;
+		float: right;
 		height: 100%;
-		width: 60%;
+		width: 30vw;
 		margin: 0 auto;
 	}
 
@@ -88,12 +105,16 @@ const SearchBar = styled(Search)`
 		width: 90%;
 		margin: auto 10px;
 		border-radius: 1em;
+		padding: 10px;
 	}
 
 	& ul {
+		position: absolute;
+		display: none;
+		top: 7%;
 		padding: 0;
 		background: lightgrey;
-		width: 50%;
+		width: 30vw;
 		margin: auto;
 		list-style: none;
 		font-size: larger;
@@ -109,6 +130,13 @@ const SearchBar = styled(Search)`
 				text-decoration: none;
 				text-shadow: 0.5px 0.3px 1px black;
 			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.search-bar,
+		ul {
+			width: 65vw;
 		}
 	}
 `;

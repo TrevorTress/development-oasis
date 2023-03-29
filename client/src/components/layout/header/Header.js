@@ -45,10 +45,14 @@ const Header = styled(HeaderComp)`
 	// logo spacing
 	.header-left {
 		height: 100%;
-		& img {
+		padding: 0.4vw;
+
+		& img,
+		h1 {
 			display: block;
-			margin: auto 0;
 			height: 100%;
+			margin: 0;
+			color: #000;
 		}
 	}
 

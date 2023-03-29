@@ -7,13 +7,13 @@ const FooterComp = ({ className }) => {
 	const link = 'https://www.interactivetrainingsystems.com';
 	return (
 		<footer className={className}>
-			<div class="footer-left">
-				<p class="powered-by">Powered By:</p>
+			<div className="footer-left">
+				<p className="powered-by">Powered By:</p>
 				<a href={link}>
-					<img class="footer-logo" src={logo} alt="logo" />
+					<img className="footer-logo" src={logo} alt="logo" />
 				</a>
 			</div>
-			<div class="footer-right">
+			<div className="footer-right">
 				<button>
 					<BsFillTelephoneFill size={20} />
 				</button>

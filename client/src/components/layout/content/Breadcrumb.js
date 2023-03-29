@@ -50,8 +50,12 @@ const Breadcrumb = styled(BreadcrumbComp)`
 	height: var(--breadcrumb-height);
 	background: var(--breadcrumb-background);
 	color: antiquewhite;
-	margin-left: 2.5vw;
-	margin-top: 1.4vh;
+	margin: auto 2.5vw;
+	font-size: 20px;
+
+	.breadcrumb {
+		margin: 0;
+	}
 `;
 
 export default Breadcrumb;

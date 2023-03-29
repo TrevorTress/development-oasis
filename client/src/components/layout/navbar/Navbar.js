@@ -10,25 +10,25 @@ import { VscTools } from 'react-icons/vsc';
 const NavbarComp = ({ className, title }) => {
 	return (
 		<nav className={className}>
-			<button class="nav-button">
+			<button className="nav-button">
 				<FaHome size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#ffff93' }}>
+			<button className="nav-button" style={{ background: '#ffff93' }}>
 				<TbTrafficCone size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#ffdb6e' }}>
+			<button className="nav-button" style={{ background: '#ffdb6e' }}>
 				<FaClipboardList size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#93daff' }}>
+			<button className="nav-button" style={{ background: '#93daff' }}>
 				<VscTools size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#ff9393' }}>
+			<button className="nav-button" style={{ background: '#ff9393' }}>
 				<MdSyncProblem size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#bb93ff' }}>
+			<button className="nav-button" style={{ background: '#bb93ff' }}>
 				<BsPencil size={50} />
 			</button>
-			<button class="nav-button" style={{ background: '#a6a6a6' }}>
+			<button className="nav-button" style={{ background: '#a6a6a6' }}>
 				<FaBookOpen size={50} />
 			</button>
 		</nav>
