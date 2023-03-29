@@ -15,8 +15,10 @@ const Dashboard = () => {
 			<Header title="ITS" />
 			<Navbar />
 			<Container>
-				<ContentNav />
-				<Content></Content>
+				<ContentNav crumbs={['One', 'Two']} />
+				<Content>
+					<h1>Hello</h1>
+				</Content>
 			</Container>
 			<Footer />
 		</>
