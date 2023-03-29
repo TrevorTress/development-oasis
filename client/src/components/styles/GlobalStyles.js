@@ -26,15 +26,6 @@ const GlobalStyles = createGlobalStyle`
 		--tooltip-margin: 30px;
 		--tooltip-arrow-size: 6px;
 	}
-	
-    // tablesorter pager button effect
-    .pager svg:hover {
-		filter: drop-shadow(0px 1px 1px black);
-		transform: scale(1.1);
-		background: #d5d5d5;
-		border-radius: 10px;
-		cursor: pointer;
-	}
 
 	/* width */
 	::-webkit-scrollbar {
@@ -60,6 +51,15 @@ const GlobalStyles = createGlobalStyle`
 	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
+	}
+
+	// tablesorter pager button effect
+    .pager svg:hover {
+		filter: drop-shadow(0px 1px 1px black);
+		transform: scale(1.1);
+		background: #d5d5d5;
+		border-radius: 10px;
+		cursor: pointer;
 	}
 `;
 

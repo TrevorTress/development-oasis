@@ -8,9 +8,9 @@ import 'tablesorter/dist/css/theme.ice.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // components
-import { Container, Content, Header, Footer, Navbar, Breadcrumb, Search } from './components/layout/index';
-import { Carousel, Image, Modal, Tooltip, Table } from './components/utilities/index';
-import GlobalStyles from './components/styles/GlobalStyles';
+import { Container, Content, Header, Footer, Navbar, Breadcrumb, Search } from './layout/index';
+import { Carousel, Image, Modal, Tooltip, Table } from './utilities/index';
+import GlobalStyles from './styles/GlobalStyles';
 import Router from './Router';
 
 function App() {
@@ -74,18 +74,7 @@ function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<Header title="ITS" />
-			<Navbar />
-			<Container>
-				<div className="d-flex justify-content-between">
-					<Breadcrumb items={['one']} />
-					<Search />
-				</div>
-				<Content>
-					<Router />
-				</Content>
-			</Container>
-			<Footer />
+			<Router />
 		</>
 	);
 }
