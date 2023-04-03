@@ -4,6 +4,7 @@ import { Carousel, Image, Modal, Tooltip, Table } from '../../utilities';
 import { For, If } from '../../scripts';
 import $ from 'jquery';
 import { FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from 'react-icons/fa';
+import AnimatedCursor from '../../utilities/cursor/Cursor';
 
 const Dashboard = () => {
 	const [toggle] = useState(1);
@@ -12,6 +13,7 @@ const Dashboard = () => {
 
 	return (
 		<>
+			<AnimatedCursor />
 			<Header title="ITS" />
 			<Navbar />
 			<Container>

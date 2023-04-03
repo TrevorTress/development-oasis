@@ -56,6 +56,10 @@ const Breadcrumb = styled(BreadcrumbComp)`
 	.breadcrumb {
 		margin: 0;
 	}
+
+	@media screen and (max-width: 480px) {
+		font-size: 18px;
+	}
 `;
 
 export default Breadcrumb;

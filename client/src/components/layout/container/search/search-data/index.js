@@ -1,3 +1,3 @@
-import SafetyData from './safety/SafetyData';
+import SafetyData from './-SafetyData';
 
 export { SafetyData };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FaPhone } from 'react-icons/fa';
 
 // for changing page titles in react
 import Helmet from './Helmet';
@@ -17,6 +18,17 @@ const HeaderComp = ({ className, title }) => {
 
 				<div className="header-right">
 					<h2>{title} QuickResponse&trade; Library</h2>
+					<div className="header-buttons">
+						<button>
+							<FaPhone size={30} />
+						</button>
+						<button>
+							<FaPhone size={30} />
+						</button>
+						<button>
+							<FaPhone size={30} />
+						</button>
+					</div>
 				</div>
 			</header>
 		</>
@@ -33,6 +45,7 @@ const Header = styled(HeaderComp)`
 	height: var(--header-height); // 8% of screen tall
 	min-height: 48px;
 	margin: 0;
+	padding: 0.8vh 0.4vw;
 	background: var(--header-background);
 	border-bottom: solid black;
 
@@ -40,12 +53,12 @@ const Header = styled(HeaderComp)`
 	.header-left a {
 		color: antiquewhite;
 		text-decoration: none;
+		margin: auto 0;
 	}
 
 	// logo spacing
 	.header-left {
 		height: 100%;
-		padding: 0.4vw;
 
 		& img,
 		h1 {
@@ -59,22 +72,23 @@ const Header = styled(HeaderComp)`
 	// title spacing
 	.header-right {
 		display: flex;
-		margin: auto 1rem;
+
 		& h2 {
 			font-weight: bold;
-			margin: auto;
+			margin: auto 1rem;
 		}
 
-		& svg {
-			display: block;
-			height: 100%;
-			margin: 10px 10px;
+		.header-buttons {
+			& button {
+				width: 4vw;
+				height: 100%;
+				border-radius: 1rem;
+				margin: 0 5px;
 
-			width: 2.4vw;
-			padding: 5px;
-			border-radius: 0.5rem;
-			&:hover {
-				transform: scale(1.1);
+				&:hover {
+					transform: scale(1.03);
+					filter: brightness(0.9);
+				}
 			}
 		}
 	}

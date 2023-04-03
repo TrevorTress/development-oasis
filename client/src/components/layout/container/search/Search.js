@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-import data from './search-data/safety/SafetyData';
+import data from './search-data/-SafetyData';
 
 // function for our SearchBlur component (to hide results if you click away)
 function useSearchBlur(ref) {
@@ -38,7 +38,7 @@ SearchBlur.propTypes = {
 const options = {
 	keys: ['tab', 'page'],
 	minMatchCharLength: 2,
-	threshold: 0.5,
+	threshold: 0.3,
 };
 
 // search bar component
@@ -117,7 +117,7 @@ const SearchBar = styled(Search)`
 		width: 30vw;
 		margin: auto;
 		list-style: none;
-		font-size: larger;
+		font-size: 16px;
 		font-weight: bold;
 		border: solid black;
 		border-radius: 1rem;
@@ -136,7 +136,7 @@ const SearchBar = styled(Search)`
 	@media screen and (max-width: 480px) {
 		.search-bar,
 		ul {
-			width: 65vw;
+			width: 50vw;
 		}
 	}
 `;
