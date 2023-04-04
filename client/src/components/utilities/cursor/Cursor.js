@@ -22,13 +22,9 @@ function useEventListener(eventName, handler, element = document) {
 	}, [eventName, element]);
 }
 
-/**
- * Animated Cursor
- * Replaces the native cursor with a custom animated cursor.
- *
- * @author Stephen Scaff
- */
-const AnimatedCursor = ({ color = '220, 90, 90', outerAlpha = 0.4, innerSize = 8, outerSize = 8, outerScale = 5, innerScale = 0.7 }) => {
+// oc 220,90,90
+//
+const AnimatedCursor = ({ color = '90, 99, 220', outerAlpha = 0.4, innerSize = 8, outerSize = 8, outerScale = 5, innerScale = 0.7, dragEffect = 4 }) => {
 	const cursorOuterRef = useRef();
 	const cursorInnerRef = useRef();
 	const requestRef = useRef();
@@ -51,8 +47,8 @@ const AnimatedCursor = ({ color = '220, 90, 90', outerAlpha = 0.4, innerSize = 8
 	const animateOuterCursor = useCallback(
 		(time) => {
 			if (previousTimeRef.current !== undefined) {
-				coords.x += (endX.current - coords.x) / 8;
-				coords.y += (endY.current - coords.y) / 8;
+				coords.x += (endX.current - coords.x) / dragEffect;
+				coords.y += (endY.current - coords.y) / dragEffect;
 				cursorOuterRef.current.style.top = coords.y + 'px';
 				cursorOuterRef.current.style.left = coords.x + 'px';
 			}
@@ -157,7 +153,7 @@ const AnimatedCursor = ({ color = '220, 90, 90', outerAlpha = 0.4, innerSize = 8
 			transition: 'opacity 0.15s ease-in-out, transform 0.15s ease-in-out',
 		},
 		cursorInner: {
-			zIndex: 10000000,
+			zIndex: 10000000, // show inner above entire page
 			position: 'fixed',
 			borderRadius: '50%',
 			width: innerSize,
