@@ -49,12 +49,14 @@ const Breadcrumb = styled(BreadcrumbComp)`
 	position: relative;
 	height: var(--breadcrumb-height);
 	background: var(--breadcrumb-background);
-	color: antiquewhite;
+
 	margin: auto 2.5vw;
 	font-size: 20px;
 
-	.breadcrumb {
+	.breadcrumb a {
 		margin: 0;
+		color: antiquewhite !important;
+		text-decoration: none;
 	}
 
 	@media screen and (max-width: 480px) {

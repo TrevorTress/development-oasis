@@ -1,7 +1,7 @@
 // dependencies
 import { useState, useEffect, useRef } from 'react';
-import GlobalStyles from './styles/GlobalStyles';
-import Router from './Router';
+import GlobalStyles from '../styles/GlobalStyles';
+import Router from '../Router';
 import $ from 'jquery';
 
 // tablesorter / bootstrap imports

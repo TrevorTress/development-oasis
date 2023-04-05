@@ -8,7 +8,7 @@ import Helmet from './Helmet';
 const HeaderComp = ({ className, title }) => {
 	return (
 		<>
-			<Helmet title="hahahahah" />
+			<Helmet title="Development Oasis" />
 			<header className={className} onClick={() => console.log('hello trevor')}>
 				<div className="header-left">
 					<a className="header-logo mb-md-0 me-md-auto" href="/">
@@ -19,15 +19,12 @@ const HeaderComp = ({ className, title }) => {
 				<div className="header-right">
 					<h2>{title} QuickResponse&trade; Library</h2>
 					<div className="header-buttons">
-						<button>
+						{/* <button>
 							<FaPhone size={30} />
 						</button>
 						<button>
 							<FaPhone size={30} />
-						</button>
-						<button>
-							<FaPhone size={30} />
-						</button>
+						</button> */}
 					</div>
 				</div>
 			</header>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Content, ContentNav, Header, Footer, Navbar } from '../../layout';
+import { Main, Container, Content, ContentNav, Header, Footer, Navbar } from '../../layout';
 import { Carousel, Image, Modal, Tooltip, Table } from '../../utilities';
 import { For, If } from '../../scripts';
 import $ from 'jquery';
@@ -15,13 +15,15 @@ const Dashboard = () => {
 		<>
 			<AnimatedCursor />
 			<Header title="ITS" />
-			<Navbar />
-			<Container>
-				<ContentNav crumbs={['One', 'Two']} />
-				<Content>
-					<h1>Hello</h1>
-				</Content>
-			</Container>
+			<Main>
+				<Navbar />
+				<Container>
+					<ContentNav crumbs={['One', 'Two']} />
+					<Content>
+						<h1>Welcome to Trevor's Code Oasis</h1>
+					</Content>
+				</Container>
+			</Main>
 			<Footer />
 		</>
 	);

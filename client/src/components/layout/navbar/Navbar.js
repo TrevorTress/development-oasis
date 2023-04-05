@@ -6,10 +6,12 @@ import { MdSyncProblem } from 'react-icons/md';
 import { RiFileList3Line } from 'react-icons/ri';
 import { TbTrafficCone } from 'react-icons/tb';
 import { VscTools } from 'react-icons/vsc';
+import { useState } from 'react';
 
 const NavbarComp = ({ className, title }) => {
+	const [navDisplay, setNavDisplay] = useState('flex');
 	return (
-		<nav className={className}>
+		<nav className={`nav-bar ${className}`} style={{ display: navDisplay }}>
 			<button className="nav-button">
 				<FaHome size={50} />
 			</button>
@@ -37,17 +39,16 @@ const NavbarComp = ({ className, title }) => {
 
 const Navbar = styled(NavbarComp)`
 	z-index: 10;
-	position: fixed;
-	display: flex;
+	position: relative;
 	flex-direction: column;
 	justify-content: space-evenly;
 	top: var(--header-height);
-	left: 0;
 	height: calc(100vh - var(--header-height) - var(--footer-height));
 	width: var(--navbar-width);
 	min-width: fit-content;
 	background: var(--navbar-background);
 	border-right: solid grey 0.5px;
+	transition: all 0.5s ease-in-out;
 
 	.nav-button {
 		display: block;

@@ -109,6 +109,7 @@ const SearchBar = styled(Search)`
 	}
 
 	& ul {
+		z-index: 5;
 		position: absolute;
 		display: none;
 		top: 7%;

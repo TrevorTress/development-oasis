@@ -13,7 +13,11 @@ const FooterComp = ({ className }) => {
 					<img className="footer-logo" src={logo} alt="logo" />
 				</a>
 			</div>
-			<div className="footer-right"></div>
+			<div className="footer-right">
+				<button>
+					<BsFillTelephoneFill size={30} />
+				</button>
+			</div>
 		</footer>
 	);
 };

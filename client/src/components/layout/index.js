@@ -1,6 +1,7 @@
-import Container from './container/Container';
-import Content from './container/Content';
-import ContentNav from './container/ContentNav';
+import Main from './main/Main';
+import Container from './main/Container';
+import Content from './main/Content';
+import ContentNav from './main/ContentNav';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import Navbar from './navbar/Navbar';
@@ -15,4 +16,4 @@ import Navbar from './navbar/Navbar';
 	</Container>
 	<Footer />
 */
-export { Container, Content, ContentNav, Header, Navbar, Footer };
+export { Main, Container, Content, ContentNav, Header, Navbar, Footer };

@@ -3,13 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 	// global vars
 	:root {
-		--container-background: lightblue;
+		
+		--container-background: white;
 
 		--header-height: 8vh;
-		--header-background: lightgrey;
+		--header-background: #baab7f;
 
 		--footer-height: 7vh;
-		--footer-background: lightgrey;
+		--footer-background: #baab7f;
 
 		--navbar-width: 6vw;
 		--navbar-background: grey;
@@ -26,6 +27,12 @@ const GlobalStyles = createGlobalStyle`
 		--tooltip-margin: 30px;
 		--tooltip-arrow-size: 6px;
 	}
+
+	body {
+		font-family: 'Roboto Mono', monospace!important;
+	}
+
+	
 
 	/* width */
 	::-webkit-scrollbar {
