@@ -1,12 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const HomeButtonComp = ({ className, title, img }) => {
+// <HomeButton title='', img='', icon=''/>
+
+const HomeButtonComp = ({ className, title, img, icon }) => {
 	return (
 		<>
-			<a href="#">
-				<button className={className}>
-					<img src={img}></img>
+			<a href="#" className={className}>
+				<button>
+					{icon && icon}
+					{img && <img src={img} />}
 					<h3>{title}</h3>
 				</button>
 			</a>
@@ -15,33 +19,46 @@ const HomeButtonComp = ({ className, title, img }) => {
 };
 
 const HomeButton = styled(HomeButtonComp)`
-	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	width: 20vw;
-	height: 32vh;
-	padding: 0;
-	border-radius: 1rem;
-	transition: all 0.3s ease-in-out;
+	text-decoration: none;
 
-	& h3 {
-		margin: 0 auto;
-		background: pink;
-		width: 100%;
-		padding: 10px;
-		border-bottom-left-radius: 1rem;
-		border-bottom-right-radius: 1rem;
-	}
-
-	& img {
-		width: 100%;
-		border-top-left-radius: 1rem;
-		border-top-right-radius: 1rem;
+	& button {
+		width: 20vw;
+		height: 30vh;
+		padding: 0;
 		margin: auto;
-	}
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		transition: all 0.3s ease-in-out;
+		background: #fff;
 
-	&:hover {
-		transform: scale(1.01);
+		& img {
+			width: 100%;
+			margin: auto;
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+		}
+
+		& svg {
+			width: 100%;
+			margin: auto;
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+		}
+
+		& h3 {
+			width: 100%;
+			padding: 10px;
+			margin: 0 auto;
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+			background: var(--primary);
+		}
+
+		&:hover {
+			transform: scale(1.01);
+		}
 	}
 `;
 

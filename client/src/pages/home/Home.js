@@ -1,13 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Main, Container, Content, ContentNav, Header, Footer, Navbar } from '../../components/layout';
 import { Carousel, Image, Modal, Tooltip, Table, HomeButton } from '../../components/utilities';
-import { For, If } from '../../components/scripts';
-import $ from 'jquery';
-
-import AnimatedCursor from '../../components/utilities/cursor/Cursor';
-import GM from '../../assets/GM.png';
-import Hyundai from '../../assets/HYUNDAI.png';
-import Stellantis from '../../assets/STELLANTIS.png';
+import { FaSearch } from 'react-icons/fa';
+import pic from '../../assets/GM.png';
 
 const Dashboard = () => {
 	const [toggle] = useState(1);
@@ -25,7 +20,7 @@ const Dashboard = () => {
 					<ContentNav crumbs={['One', 'Two']} />
 					<Content>
 						<h1>Welcome to Trevor's Code Oasis</h1>
-						<HomeButton title="workshop" img={Hyundai} />
+						<HomeButton title="WORKSHOP" icon={<FaSearch size={100} />} /*img={pic}*/ />
 					</Content>
 				</Container>
 			</Main>
