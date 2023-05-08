@@ -1,31 +1,97 @@
+// packages
 import styled from 'styled-components';
-import { FaPhone } from 'react-icons/fa';
+// assets
 
-// for changing page titles in react
-import Helmet from './Helmet';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+
+import { FaSearch, FaHome, FaQuestionCircle } from 'react-icons/fa';
+import { IoMdSettings, IoMdMail, IoMdMenu } from 'react-icons/io';
+import { MdOutlineLogout } from 'react-icons/md';
+import { Tooltip } from '../../utilities';
+// nested components
+import Helmet from './Helmet'; // for adjusting page title in react
+import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 
 // header content and logic
-const HeaderComp = ({ className, title }) => {
+const HeaderComp = ({ className, login, title }) => {
 	return (
 		<>
-			<Helmet title="Development Oasis" />
+			<Helmet title={title ? title : 'Development Oasis'} />
 			<header className={className} onClick={() => console.log('hello trevor')}>
 				<div className="header-left">
-					<a className="header-logo mb-md-0 me-md-auto" href="/">
-						<h1>{title}</h1>
-					</a>
+					<a className="header-logo mb-md-0 me-md-auto d-flex" href="/"></a>
 				</div>
 
 				<div className="header-right">
-					<h2>{title} QuickResponse&trade; Library</h2>
-					<div className="header-buttons">
-						{/* <button>
-							<FaPhone size={30} />
-						</button>
-						<button>
-							<FaPhone size={30} />
-						</button> */}
-					</div>
+					{
+						// do not render buttons on login page
+						!login && (
+							<div className="header-buttons">
+								<Tooltip text="Search" direction="down" className="d-flex">
+									<button>
+										<FaSearch size={40} />
+									</button>
+								</Tooltip>
+								<Tooltip text="Settings" direction="down" className="d-flex">
+									<button>
+										<IoMdSettings size={45} />
+									</button>
+								</Tooltip>
+								<Tooltip text="Log-Off" direction="down" className="d-flex">
+									<button>
+										<MdOutlineLogout size={50} />
+									</button>
+								</Tooltip>
+								<Tooltip text="Contact" direction="down" className="d-flex">
+									<button>
+										<IoMdMail size={40} />
+									</button>
+								</Tooltip>
+								<Tooltip text="Help" direction="down" className="d-flex">
+									<button>
+										<FaQuestionCircle size={40} />
+									</button>
+								</Tooltip>
+								<Tooltip text="Home" direction="down" className="d-flex">
+									<button>
+										<FaHome size={40} />
+									</button>
+								</Tooltip>
+							</div>
+						)
+					}
+					<Dropdown className="mobile-menu">
+						<Dropdown.Toggle>
+							<IoMdMenu size={45} />
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item>
+								<FaSearch size={45} />
+								<span>Search</span>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<IoMdSettings size={45} />
+								<span>Settings</span>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<MdOutlineLogout size={45} />
+								<span>Logout</span>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<IoMdMail size={45} />
+								<span>Contact</span>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<FaQuestionCircle size={45} />
+								<span>Help</span>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<FaHome size={45} />
+								<span>Home</span>
+							</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
 				</div>
 			</header>
 		</>
@@ -34,34 +100,32 @@ const HeaderComp = ({ className, title }) => {
 
 // header styling
 const Header = styled(HeaderComp)`
-	z-index: 100; // layer header above anything else
+	background: var(--header-background);
+	width: 100%; // width of entire page
+	height: var(--header-height);
 	position: fixed; // lock header at top
 	display: flex; // organized left-right
 	justify-content: space-between; // header-left and header-right placed on opposite sides
-	width: 100%; // width of entire page
-	height: var(--header-height); // 8% of screen tall
-	min-height: 48px;
 	margin: 0;
 	padding: 0.8vh 0.4vw;
-	background: var(--header-background);
-	border-bottom: solid black;
+	border-bottom: solid black; // logo link
+	z-index: 100; // layer header above anything else
 
-	// logo link
-	.header-left a {
-		color: antiquewhite;
-		text-decoration: none;
-		margin: auto 0;
-	}
-
-	// logo spacing
 	.header-left {
 		height: 100%;
+
+		& a {
+			color: antiquewhite;
+			text-decoration: none;
+			margin: auto 0;
+		}
 
 		& img,
 		h1 {
 			display: block;
 			height: 100%;
-			margin: 0;
+			width: 15vw;
+			margin: auto;
 			color: #000;
 		}
 	}
@@ -73,14 +137,23 @@ const Header = styled(HeaderComp)`
 		& h2 {
 			font-weight: bold;
 			margin: auto 1rem;
+			color: #fff;
 		}
 
 		.header-buttons {
+			display: flex;
 			& button {
 				width: 4vw;
-				height: 100%;
+				height: 75%;
+				border: none;
 				border-radius: 1rem;
-				margin: 0 5px;
+				margin: auto 5px;
+				background: #ffffff1f;
+
+				& svg {
+					color: var(--secondary);
+					margin: auto;
+				}
 
 				&:hover {
 					transform: scale(1.03);
@@ -88,19 +161,62 @@ const Header = styled(HeaderComp)`
 				}
 			}
 		}
+
+		.mobile-menu {
+			display: none;
+		}
 	}
 
 	@media screen and (max-width: 480px) {
-		h2 {
-			font-size: medium;
+		.header-left {
 		}
 
 		.header-right {
 			margin: 0;
+
+			& .header-buttons {
+				display: none !important;
+			}
+		}
+
+		.mobile-menu {
+			display: block !important;
+			margin: auto;
+
+			& button {
+				width: 16vw;
+				border: none;
+				border-radius: 1rem;
+				margin: auto 5px;
+				padding: 0;
+				background: #ffffff1f;
+			}
+
+			& svg {
+				color: var(--secondary);
+			}
+		}
+
+		.dropdown-menu.show {
+			background: lightgrey;
+			width: 40vw;
+
+			& svg {
+				color: var(--primary);
+				margin-right: 10px;
+			}
+		}
+
+		.dropdown-item {
+			display: flex;
+			font-weight: bold;
+			justify-content: space-between;
+
+			& span {
+				margin: auto;
+			}
 		}
 	}
 `;
 
 export default Header;
-
-// <Header />

@@ -19,9 +19,7 @@ const Dashboard = () => {
 				<Navbar />
 				<Container>
 					<ContentNav crumbs={['One', 'Two']} />
-					<Content>
-						<h1>Welcome to Trevor's Code Oasis</h1>
-					</Content>
+					<Content></Content>
 				</Container>
 			</Main>
 			<Footer />

@@ -4,10 +4,10 @@ import Search from './search/Search';
 
 const ContentNavComp = ({ className, crumbs }) => {
 	return (
-		<div className={className}>
+		<nav className={className}>
 			<Breadcrumb crumbs={crumbs} />
 			<Search />
-		</div>
+		</nav>
 	);
 };
 

@@ -3,14 +3,16 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 	// global vars
 	:root {
+
+		--primary: #baab7f;
 		
 		--container-background: white;
 
 		--header-height: 8vh;
-		--header-background: #baab7f;
+		--header-background: var(--primary);
 
 		--footer-height: 7vh;
-		--footer-background: #baab7f;
+		--footer-background: var(--primary);
 
 		--navbar-width: 6vw;
 		--navbar-background: grey;

@@ -1,4 +1,7 @@
+//packages
 import styled from 'styled-components';
+
+// icons
 import logo from './its-logo.png';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
@@ -24,16 +27,16 @@ const FooterComp = ({ className }) => {
 
 // footer styling
 const Footer = styled(FooterComp)`
-	z-index: 100; // layer footer above anything else
-	display: flex; // organized left-right
-	justify-content: space-between; // footer-left and footer-right placed on opposite sides
+	background: var(--footer-background);
+	width: 100%; // width of entire page
+	height: var(--footer-height);
+	min-height: 48px;
 	position: fixed; // stick in place
 	bottom: 0; // stick to bottom of page
-	width: 100%; // width of entire page
-	height: var(--footer-height); // 7% of screen tall
-	min-height: 48px;
+	display: flex; // organized left-right
+	justify-content: space-between; // footer-left and footer-right placed on opposite sides
 	border-top: solid black;
-	background: var(--footer-background);
+	z-index: 100; // layer footer above anything else
 
 	// left section
 	.footer-left {

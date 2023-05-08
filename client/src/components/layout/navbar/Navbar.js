@@ -1,12 +1,14 @@
+// packages
+import { useState } from 'react';
 import styled from 'styled-components';
-import { FaHome } from 'react-icons/fa';
-import { FaClipboardList, FaBookOpen } from 'react-icons/fa';
+
+// icons
+import { FaHome, FaClipboardList, FaBookOpen } from 'react-icons/fa';
 import { BsPencil } from 'react-icons/bs';
 import { MdSyncProblem } from 'react-icons/md';
 import { RiFileList3Line } from 'react-icons/ri';
 import { TbTrafficCone } from 'react-icons/tb';
 import { VscTools } from 'react-icons/vsc';
-import { useState } from 'react';
 
 const NavbarComp = ({ className, title }) => {
 	const [navDisplay, setNavDisplay] = useState('flex');
@@ -69,7 +71,7 @@ const Navbar = styled(NavbarComp)`
 
 	// hide navbar on mobile
 	@media screen and (max-width: 480px) {
-		display: none;
+		display: none !important;
 	}
 `;
 
