@@ -34,6 +34,15 @@ const GlobalStyles = createGlobalStyle`
 		font-family: 'Roboto Mono', monospace!important;
 	}
 
+	switchbox {
+		display: flex;
+	}
+	
+	@media screen and (max-width: 480px) {
+		switchbox {
+			display: block;
+		}
+	}
 	
 
 	/* width */
@@ -70,6 +79,8 @@ const GlobalStyles = createGlobalStyle`
 		border-radius: 10px;
 		cursor: pointer;
 	}
+
+	
 `;
 
 export default GlobalStyles;

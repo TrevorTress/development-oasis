@@ -61,6 +61,7 @@ const Breadcrumb = styled(BreadcrumbComp)`
 
 	@media screen and (max-width: 480px) {
 		font-size: 18px;
+		width: 36vw;
 	}
 `;
 

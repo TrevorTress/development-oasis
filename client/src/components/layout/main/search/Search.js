@@ -61,7 +61,7 @@ const Search = ({ className }) => {
 			<div className={className}>
 				<div className="search-bar">
 					<FaSearch size={20} />
-					<input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search for items here" />
+					<input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search for items" />
 					{results.length > 0 && (
 						<ul id="results">
 							{results.map(({ item }) => {
@@ -91,7 +91,7 @@ const SearchBar = styled(Search)`
 		justify-content: right;
 		float: right;
 		height: 100%;
-		width: 30vw;
+		width: 54vw;
 		margin: 0 auto;
 	}
 
@@ -138,6 +138,10 @@ const SearchBar = styled(Search)`
 		.search-bar,
 		ul {
 			width: 50vw;
+		}
+
+		input {
+			font-size: 12px;
 		}
 	}
 `;

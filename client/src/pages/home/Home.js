@@ -19,16 +19,16 @@ const HomePage = ({ className }) => {
 					<ContentNav crumbs={['One', 'Two']} />
 					<Content>
 						<h1>Welcome to Trevor's Code Oasis</h1>
-						<div className="d-flex">
+						<switchbox>
 							<HomeButton title="WORKSHOP" img={pic} />
 							<HomeButton title="WORKSHOP" icon={<FaSearch size={100} />} />
 							<HomeButton title="WORKSHOP" img={pic} />
 							<HomeButton title="WORKSHOP" icon={<FaSearch size={100} />} />
-						</div>
+						</switchbox>
 					</Content>
 				</Container>
-				<Footer />
 			</Main>
+			<Footer />
 		</>
 	);
 };

@@ -60,6 +60,12 @@ const HomeButton = styled(HomeButtonComp)`
 			transform: scale(1.01);
 		}
 	}
+
+	@media screen and (max-width: 480px) {
+		& button {
+			width: 100%;
+		}
+	}
 `;
 
 export default HomeButton;

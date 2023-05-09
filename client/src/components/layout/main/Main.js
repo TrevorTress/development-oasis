@@ -15,8 +15,7 @@ const Main = styled(MainComp)`
 
 	// mobile adjustments
 	@media screen and (max-width: 480px) {
-		left: 0; // nav disappears, Main shifts back
-		width: 100%;
+		height: 82vh;
 	}
 `;
 

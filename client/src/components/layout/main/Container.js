@@ -11,12 +11,9 @@ const Container = styled(ContainerComp)`
 	width: 100%; // (page - navbar)
 	top: var(--header-height); // shift past header
 
-	overflow: auto; // content scrolls inside of other static elements
-
 	// mobile adjustments
 	@media screen and (max-width: 480px) {
-		left: 0; // nav disappears, container shifts back
-		width: 100%;
+		height: 80vh;
 	}
 `;
 

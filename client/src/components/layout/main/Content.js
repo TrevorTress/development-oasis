@@ -12,9 +12,12 @@ const Content = styled(ContentComp)`
 	padding: 50px;
 	border-radius: 2rem;
 	opacity: 0.8;
+	overflow: auto;
 
 	@media screen and (max-width: 480px) {
-		width: 97vw;
+		width: 95vw;
+		margin: auto;
+		height: 62vh;
 	}
 `;
 
