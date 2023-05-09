@@ -40,8 +40,9 @@ const Footer = styled(FooterComp)`
 
 	// left section
 	.footer-left {
+		height: 100%;
 		display: flex;
-		margin: 0 1rem;
+		margin: auto 1rem;
 
 		// powered by text
 		.powered-by {
@@ -76,6 +77,26 @@ const Footer = styled(FooterComp)`
 			&:hover {
 				transform: scale(1.05);
 				filter: opacity(0.8);
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		background: var(--primary);
+		position: relative;
+		z-index: 1;
+
+		.footer-left {
+			padding: 10px;
+			margin: 0;
+		}
+
+		.footer-right {
+			margin: 0;
+			text-align: center;
+			& h2 {
+				font-size: 18px;
+				margin: auto;
 			}
 		}
 	}

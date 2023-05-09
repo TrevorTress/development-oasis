@@ -1,25 +1,23 @@
 // packages
 import styled from 'styled-components';
-// assets
 
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-
+// nested components
+import Helmet from './Helmet'; // for adjusting page title in react
+import { Tooltip } from '../../utilities';
+import { Dropdown } from 'react-bootstrap';
+// icons
 import { FaSearch, FaHome, FaQuestionCircle } from 'react-icons/fa';
 import { IoMdSettings, IoMdMail, IoMdMenu } from 'react-icons/io';
 import { MdOutlineLogout } from 'react-icons/md';
-import { Tooltip } from '../../utilities';
-// nested components
-import Helmet from './Helmet'; // for adjusting page title in react
-import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 
 // header content and logic
 const HeaderComp = ({ className, login, title }) => {
 	return (
 		<>
 			<Helmet title={title ? title : 'Development Oasis'} />
-			<header className={className} onClick={() => console.log('hello trevor')}>
+			<header className={className}>
 				<div className="header-left">
-					<a className="header-logo mb-md-0 me-md-auto d-flex" href="/"></a>
+					<a className="header-logo mb-md-0 me-md-auto" href="/"></a>
 				</div>
 
 				<div className="header-right">
@@ -101,15 +99,15 @@ const HeaderComp = ({ className, login, title }) => {
 // header styling
 const Header = styled(HeaderComp)`
 	background: var(--header-background);
-	width: 100%; // width of entire page
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 	height: var(--header-height);
-	position: fixed; // lock header at top
-	display: flex; // organized left-right
-	justify-content: space-between; // header-left and header-right placed on opposite sides
-	margin: 0;
 	padding: 0.8vh 0.4vw;
-	border-bottom: solid black; // logo link
-	z-index: 100; // layer header above anything else
+	border-bottom: solid black;
+	margin: 0;
+	z-index: 100;
 
 	.header-left {
 		height: 100%;
@@ -168,6 +166,7 @@ const Header = styled(HeaderComp)`
 	}
 
 	@media screen and (max-width: 480px) {
+		position: absolute;
 		.header-left {
 		}
 

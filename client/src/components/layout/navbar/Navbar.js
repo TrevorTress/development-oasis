@@ -13,7 +13,7 @@ import { VscTools } from 'react-icons/vsc';
 const NavbarComp = ({ className, title }) => {
 	const [navDisplay, setNavDisplay] = useState('flex');
 	return (
-		<nav className={`nav-bar ${className}`} style={{ display: navDisplay }}>
+		<nav className={className} style={{ display: navDisplay }}>
 			<button className="nav-button">
 				<FaHome size={50} />
 			</button>

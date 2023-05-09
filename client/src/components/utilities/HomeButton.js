@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // <HomeButton title='', img='', icon=''/>
@@ -20,6 +19,7 @@ const HomeButtonComp = ({ className, title, img, icon }) => {
 
 const HomeButton = styled(HomeButtonComp)`
 	text-decoration: none;
+	margin: 10px;
 
 	& button {
 		width: 20vw;

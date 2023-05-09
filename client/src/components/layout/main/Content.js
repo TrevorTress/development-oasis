@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
+const ContentComp = ({ className, children }) => {
+	return <section className={className}>{children}</section>;
+};
+
 // component that holds main page content (to the right of the navbar)
-const Content = styled.section`
+const Content = styled(ContentComp)`
 	height: var(--content-height);
 	margin: 0 1.5vw;
 	background: var(--content-background);
