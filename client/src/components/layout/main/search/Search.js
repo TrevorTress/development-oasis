@@ -39,6 +39,7 @@ const options = {
 	keys: ['tab', 'page'],
 	minMatchCharLength: 2,
 	threshold: 0.3,
+	limit: 8,
 };
 
 // search bar component
@@ -91,7 +92,7 @@ const SearchBar = styled(Search)`
 		justify-content: right;
 		float: right;
 		height: 100%;
-		width: 54vw;
+		width: 36vw;
 		margin: 0 auto;
 	}
 
@@ -137,7 +138,8 @@ const SearchBar = styled(Search)`
 	@media screen and (max-width: 480px) {
 		.search-bar,
 		ul {
-			width: 50vw;
+			width: 54vw;
+			font-size: 10px;
 		}
 
 		input {

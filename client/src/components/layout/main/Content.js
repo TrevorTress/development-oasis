@@ -11,7 +11,6 @@ const Content = styled(ContentComp)`
 	background: var(--content-background);
 	padding: 50px;
 	border-radius: 2rem;
-	opacity: 0.8;
 	overflow: auto;
 
 	@media screen and (max-width: 480px) {

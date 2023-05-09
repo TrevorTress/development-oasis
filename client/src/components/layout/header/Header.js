@@ -142,11 +142,11 @@ const Header = styled(HeaderComp)`
 			display: flex;
 			& button {
 				width: 4vw;
-				height: 75%;
+				height: 90%;
 				border: none;
 				border-radius: 1rem;
 				margin: auto 5px;
-				background: #ffffff1f;
+				background: #d0f6ffdb;
 
 				& svg {
 					color: var(--secondary);

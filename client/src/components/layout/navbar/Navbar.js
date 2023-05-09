@@ -3,38 +3,52 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 // icons
-import { FaHome, FaClipboardList, FaBookOpen } from 'react-icons/fa';
+import { FaHome, FaClipboardList, FaBookOpen, FaGithub, FaCpanel, FaRobot, FaChartBar } from 'react-icons/fa';
 import { BsPencil } from 'react-icons/bs';
-import { MdSyncProblem } from 'react-icons/md';
+import { MdSyncProblem, MdOutlineScreenSearchDesktop } from 'react-icons/md';
 import { RiFileList3Line } from 'react-icons/ri';
 import { TbTrafficCone } from 'react-icons/tb';
-import { VscTools } from 'react-icons/vsc';
+import { VscSymbolMisc } from 'react-icons/vsc';
 
 const NavbarComp = ({ className, title }) => {
 	const [navDisplay, setNavDisplay] = useState('flex');
 	return (
 		<nav className={className} style={{ display: navDisplay }}>
-			<button className="nav-button">
-				<FaHome size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#ffff93' }}>
-				<TbTrafficCone size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#ffdb6e' }}>
-				<FaClipboardList size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#93daff' }}>
-				<VscTools size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#ff9393' }}>
-				<MdSyncProblem size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#bb93ff' }}>
-				<BsPencil size={50} />
-			</button>
-			<button className="nav-button" style={{ background: '#a6a6a6' }}>
-				<FaBookOpen size={50} />
-			</button>
+			<a href="https://github.com/" target="blank">
+				<button className="nav-button">
+					<FaGithub size={50} />
+				</button>
+			</a>
+			<a href="https://www.interactivetrainingsystems.com:2083/" target="blank">
+				<button className="nav-button" style={{ background: '#ffff93' }}>
+					<FaCpanel size={75} />
+				</button>
+			</a>
+			<a href="https://chat.openai.com/" target="blank">
+				<button className="nav-button" style={{ background: '#ffdb6e' }}>
+					<FaRobot size={50} />
+				</button>
+			</a>
+			<a href="https://react-icons.github.io/react-icons" target="blank">
+				<button className="nav-button" style={{ background: '#93daff' }}>
+					<VscSymbolMisc size={50} />
+				</button>
+			</a>
+			<a>
+				<button className="nav-button" style={{ background: '#ff9393' }}>
+					<MdSyncProblem size={50} />
+				</button>
+			</a>
+			<a href="http://localhost:3000/" target="blank">
+				<button className="nav-button" style={{ background: '#bb93ff' }}>
+					<MdOutlineScreenSearchDesktop size={50} />
+				</button>
+			</a>
+			<a href="https://docs.google.com/spreadsheets/d/1W0lz794XSLcNY1dk-kgqXS12Y0I6glVTFWWhnov8MP0/edit#gid=1510448127" target="blank">
+				<button className="nav-button" style={{ background: '#a6a6a6' }}>
+					<FaChartBar size={50} />
+				</button>
+			</a>
 		</nav>
 	);
 };
@@ -52,21 +66,26 @@ const Navbar = styled(NavbarComp)`
 	border-right: solid grey 0.5px;
 	transition: all 0.5s ease-in-out;
 
-	.nav-button {
-		display: block;
-		margin: 0 auto;
-		width: 100%;
-		height: 14%;
-		border-top: lightgrey;
-		border-bottom: lightgrey;
-		border-left: none;
-		border-right: none;
-		/* border-radius: 0.5rem; */
-
-		&:hover {
-			/* transform: scale(1.01); */
-			filter: brightness(0.95);
+	& a {
+		height: 12vh;
+		& button {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
+			border-top: lightgrey;
+			border-bottom: lightgrey;
+			border-left: none;
+			border-right: none;
+			&:hover {
+				/* transform: scale(1.01); */
+				filter: brightness(0.95);
+			}
 		}
+	}
+
+	.nav-button {
+		/* border-radius: 0.5rem; */
 	}
 
 	// hide navbar on mobile

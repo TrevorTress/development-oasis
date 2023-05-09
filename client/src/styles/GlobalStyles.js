@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
 	// global vars
 	:root {
 
-		--primary: #baab7f;
+		--primary: #f0e2bd;
 		
 		--container-background: white;
 
@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
 				
 		--content-height: 76vh;
 		--content-width: 90vw;
-		--content-background: white;
+		--content-background: #ffffffa3;
 		
 		--tooltip-text-color: white;
 		--tooltip-background-color: black;
