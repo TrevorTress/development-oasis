@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-import data from './search-data/-SafetyData';
+import data from './search/search-data/-SafetyData';
 
 // function for our SearchBlur component (to hide results if you click away)
 function useSearchBlur(ref) {
@@ -62,13 +62,21 @@ const Search = ({ className }) => {
 			<div className={className}>
 				<div className="search-bar">
 					<FaSearch size={20} />
-					<input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search for items" />
+					<input
+						type="text"
+						value={searchTerm}
+						onChange={handleSearch}
+						placeholder="Search for items"
+					/>
 					{results.length > 0 && (
 						<ul id="results">
 							{results.map(({ item }) => {
 								return (
 									<li>
-										<a href={item.link} style={{ color: `${item.color}` }}>
+										<a
+											href={item.link}
+											style={{ color: `${item.color}` }}
+										>
 											{item.tab} ({item.section} &gt; {item.page})
 										</a>
 									</li>

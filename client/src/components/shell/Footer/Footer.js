@@ -13,7 +13,11 @@ const FooterComp = ({ className }) => {
 			<div className="footer-left">
 				<p className="powered-by">Powered By:</p>
 				<a href={link}>
-					<img className="footer-logo" src={logo} alt="logo" />
+					<img
+						className="footer-logo"
+						src={logo}
+						alt="logo"
+					/>
 				</a>
 			</div>
 			<div className="footer-right"></div>
@@ -79,7 +83,7 @@ const Footer = styled(FooterComp)`
 
 	@media screen and (max-width: 480px) {
 		background: var(--primary);
-		position: relative;
+		position: absolute;
 		z-index: 1;
 
 		.footer-left {

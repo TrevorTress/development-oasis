@@ -6,17 +6,15 @@ const ContentComp = ({ className, children }) => {
 
 // component that holds main page content (to the right of the navbar)
 const Content = styled(ContentComp)`
-	height: var(--content-height);
-	margin: 0 1.5vw;
-	background: var(--content-background);
-	padding: 50px;
+	height: 100%;
+	width: 100%;
+	padding: 1.5rem;
 	border-radius: 2rem;
+	background: white;
 	overflow: auto;
 
 	@media screen and (max-width: 480px) {
-		width: 95vw;
-		margin: auto;
-		height: 62vh;
+		padding: 1rem;
 	}
 `;
 

@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
 
 		--primary: #f0e2bd;
 		
-		--container-background: white;
+		/* --container-background: white; */
 
 		--header-height: 8vh;
 		--header-background: var(--primary);
@@ -19,10 +19,6 @@ const GlobalStyles = createGlobalStyle`
 		
 		--breadcrumb-height: 4vh;
 		--breadcrumb-background: none;
-				
-		--content-height: 76vh;
-		--content-width: 90vw;
-		--content-background: #ffffffa3;
 		
 		--tooltip-text-color: white;
 		--tooltip-background-color: black;
