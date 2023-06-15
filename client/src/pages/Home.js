@@ -1,23 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
-import { Main } from '../components/shell';
-import { Carousel, Image, Modal, Tooltip, Table, HomeButton } from '../components/utilities';
-import { FaSearch } from 'react-icons/fa';
-import pic from '../assets/GM.png';
+// import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import Main from '../components/layout/X-Main.js';
+
+// import { Carousel, Image, Modal, Tooltip, Table, HomeButton } from '../components/utilities';
 
 const HomePage = ({ className }) => {
 	return (
 		<>
-			<Main></Main>
+			<Main className={className}></Main>
 		</>
 	);
 };
 
-const Home = styled(HomePage)`
-	& h1 {
-		text-align: center;
-		margin-bottom: 30px;
-	}
-`;
+const Home = styled(HomePage)``;
 
 export default Home;

@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyles from './styles/GlobalStyles';
-import Router from './Router';
+import Router from './routes/Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // icons
-import logo from './its-logo.png';
+import logo from './assets/footer-logo.png';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
 // footer content and logic

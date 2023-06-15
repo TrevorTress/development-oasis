@@ -2,8 +2,8 @@
 import styled from 'styled-components';
 
 // nested components
-import Helmet from './Helmet'; // for adjusting page title in react
-import { Tooltip } from '../../utilities';
+import Helmet from './sub-components/Helmet'; // for adjusting page title in react
+import { Tooltip } from '../utils';
 import { Dropdown } from 'react-bootstrap';
 // icons
 import { FaSearch, FaHome, FaQuestionCircle } from 'react-icons/fa';
@@ -177,6 +177,7 @@ const Header = styled(HeaderComp)`
 				& svg {
 					color: var(--secondary);
 					margin: auto;
+					width: 100%;
 				}
 
 				&:hover {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-import data from './search/search-data/-SafetyData';
+import data from './search-data/-SafetyData';
 
 // function for our SearchBlur component (to hide results if you click away)
 function useSearchBlur(ref) {

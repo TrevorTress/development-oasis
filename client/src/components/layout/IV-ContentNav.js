@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Breadcrumb from './Breadcrumb';
-import Search from '../Search';
+import Breadcrumb from './sub-components/Breadcrumb';
+import Search from './sub-components/Search/Search';
 
 const ContentNavComp = ({ className, crumbs }) => {
 	return (

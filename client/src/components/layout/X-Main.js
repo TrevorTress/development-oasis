@@ -1,12 +1,13 @@
-import Container from './Container';
-import Content from './Content';
-import ContentNav from './ContentNav/ContentNav';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import Navbar from './Navbar/Navbar';
 import styled from 'styled-components';
 
-import bg from './bg.jpeg';
+import Header from './I-Header';
+import Navbar from './II-Navbar';
+import Container from './III-Container';
+import ContentNav from './IV-ContentNav';
+import Content from './V-Content';
+import Footer from './VI-Footer';
+
+import bg from './assets/bg.jpeg';
 
 const MainComp = ({ className, children }) => {
 	return (
@@ -23,7 +24,7 @@ const MainComp = ({ className, children }) => {
 	);
 };
 
-export const Main = styled(MainComp)`
+const Main = styled(MainComp)`
 	display: flex;
 	height: 100vh; // (page - header - footer)
 	width: 100vw; // (page - navbar)
@@ -35,3 +36,5 @@ export const Main = styled(MainComp)`
 		height: 82vh;
 	}
 `;
+
+export default Main;
