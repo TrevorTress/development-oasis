@@ -4,12 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
 import Router from './routes/Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Main from './components/layout/X-Main';
 
 function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<Router />
+			<Main>
+				<Router />
+			</Main>
 		</>
 	);
 }

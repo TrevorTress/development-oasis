@@ -6,6 +6,7 @@ import Container from './III-Container';
 import ContentNav from './IV-ContentNav';
 import Content from './V-Content';
 import Footer from './VI-Footer';
+import Router from '../../routes/Router';
 
 import bg from './assets/bg.jpeg';
 
@@ -16,7 +17,6 @@ const MainComp = ({ className, children }) => {
 			<Navbar />
 			<Container>
 				{/* <ContentNav /> */}
-
 				<Content>{children}</Content>
 			</Container>
 			<Footer />

@@ -139,7 +139,7 @@ const Header = styled(HeaderComp)`
 		height: 100%;
 
 		& a {
-			color: antiquewhite;
+			color: #fff;
 			text-decoration: none;
 			margin: auto 0;
 		}

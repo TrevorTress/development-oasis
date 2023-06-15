@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const HomeComp = () => {
+const XXXComp = () => {
 	return (
 		<>
-			<h1>Home</h1>
+			<h1>XXX</h1>
 		</>
 	);
 };
 
-const Home = styled(HomeComp)``;
+const XXX = styled(XXXComp)``;
 
-export default Home;
+export default XXX;
